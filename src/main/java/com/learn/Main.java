@@ -1,14 +1,14 @@
 package com.learn;
 
-import com.learn.services.PaymentService;
+import com.learn.services.OrderService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
-    public static void main(String[] args) {
-        var context = new AnnotationConfigApplicationContext(AppConfig.class);
-        var paymentService = context.getBean("paymentService", PaymentService.class);
-        String result = paymentService.processPayment("Alice", 150.00);
-        System.out.println("🟢 [RESULT] " + result);
-        context.close();
+    static void main() {
+        var cxt = new AnnotationConfigApplicationContext(AppConfig.class);
+        var orderService = cxt.getBean("orderService", OrderService.class);
+        String s = orderService.placeOrder("Book");
+        System.out.println(s);
+        cxt.close();
     }
 }

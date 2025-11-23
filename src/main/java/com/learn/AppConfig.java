@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
+@ComponentScan(basePackages = {"com.learn", "com.learn.aspects", "com.learn.services"})
 @EnableAspectJAutoProxy
-@ComponentScan(basePackages = {"com.learn", "com.learn.services", "com.learn.aspects"})
 public class AppConfig {
 }
